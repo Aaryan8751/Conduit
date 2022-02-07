@@ -6,10 +6,10 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 class ConduitClient {
 
-    val retrofit = Retrofit.Builder()
+    private val retrofit: Retrofit = Retrofit.Builder()
         .baseUrl("https://api.realworld.io/api/")
         .addConverterFactory(MoshiConverterFactory.create())
         .build()
 
-    val api = retrofit.create(ConduitAPI::class.java)
+    val api = retrofit.create(ConduitAPI::class.java)!!
 }
