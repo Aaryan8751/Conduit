@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import io.realworld.conduit.databinding.FragmentFeedBinding
 import java.io.LineNumberReader
 
-class GlobalFeedFragment :Fragment() {
+class MyFeedFragment :Fragment() {
 
     private var _binding : FragmentFeedBinding? = null
     private lateinit var viewModel : FeedViewModel
@@ -36,7 +36,7 @@ class GlobalFeedFragment :Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.fetchGlobalFeed()
+        viewModel.fetchMyFeed()
         viewModel.feed.observe({lifecycle}){
             feedAdapter.submitList(it)
         }
